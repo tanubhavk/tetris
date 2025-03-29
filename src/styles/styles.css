@@ -1,0 +1,224 @@
+/* styles.css */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f380f; 
+}
+
+.game-container {
+  display: flex;
+  gap: 20px;
+  background-color: #9bbc0f; 
+  padding: 20px;
+  border: 10px solid #8bac0f;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Game Board */
+.board {
+  display: grid;
+  grid-template-rows: repeat(20, 30px); 
+  grid-template-columns: repeat(10, 30px);
+  background-color: #8bac0f;
+  border: 5px solid #306230;
+  box-shadow: inset 0 0 5px #0f380f;
+}
+
+/* Individual Cell */
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0f380f;
+  background-color: #9bbc0f;
+}
+
+/* Filled Cells */
+.cell.filled {
+  background-color: #306230;
+}
+
+/* Side Panel */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #8bac0f;
+  padding: 15px;
+  border: 5px solid #306230;
+  border-radius: 5px;
+}
+
+/* Info Box Styles */
+.info-box {
+  background-color: #9bbc0f;
+  padding: 12px;
+  text-align: center;
+  font-size: 18px;
+  border: 3px solid #0f380f;
+  border-radius: 5px;
+  color: #0f380f;
+  font-weight: bold;
+}
+
+/* Next Piece Preview */
+.next-piece {
+  display: grid;
+  grid-template-columns: repeat(5, 20px);
+  grid-template-rows: repeat(5, 20px);
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  background-color: #8bac0f;
+  border: 3px solid #306230;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.next-piece .cell {
+  width: 20px;
+  height: 20px;
+  background-color: #9bbc0f;
+  border: 1px solid #0f380f;
+}
+
+.next-piece .cell.filled {
+  background-color: #306230;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #306230;
+  color: #9bbc0f;
+  border: 3px solid #0f380f;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0f380f;
+  color: #9bbc0f;
+  transform: scale(1.05);
+}
+
+/* Game Over Overlay */
+.game-over-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  background-color: #b0c4a1;
+  border: 5px solid #4a4a4a;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.game-over-overlay h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #333;
+  text-shadow: 1px 1px 0 #ddd, -1px -1px 0 #ddd;
+  font-family: "Press Start 2P", cursive;
+}
+
+.game-over-overlay p {
+  font-size: 14px;
+  color: #4a4a4a;
+  margin-top: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.game-over-overlay button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 14px;
+  background-color: #8b9e75;
+  color: #333;
+  border: 2px solid #4a4a4a;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.game-over-overlay button:hover {
+  background-color: #98b380;
+  border-color: #4a4a4a;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #8b9e75;
+}
+
+/* Test Game Over Button */
+.test-game-over-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8b9e75;
+  color: #333;
+  border: 2px solid #4a4a4a;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: "Press Start 2P", cursive;
+  transition: all 0.2s ease-in-out;
+}
+
+.test-game-over-btn:hover {
+  background-color: #98b380;
+  box-shadow: 0 0 8px #8b9e75;
+  transform: scale(1.05);
+}
+
+.game-over-overlay {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+.cell.active {
+  background-color: #4f7350; /* A slightly brighter shade */
+  border: 1px solid #9bbc0f;
+}
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .board {
+    grid-template-rows: repeat(20, 20px);
+    grid-template-columns: repeat(10, 20px);
+  }
+
+  .cell {
+    width: 20px;
+    height: 20px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
