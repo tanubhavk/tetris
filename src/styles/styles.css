@@ -198,7 +198,7 @@ button:hover {
   }
 }
 .cell.active {
-  background-color: #4f7350; A slightly brighter shade
+  background-color: #4f7350; /*A slightly brighter shade */
   border: 1px solid #9bbc0f;
 }
 @media (max-width: 768px) {
@@ -248,5 +248,5 @@ button:hover {
 
 /* Add Padding to Body to Avoid Overlap */
 body {
-  padding-top: 60px; /* Prevents content from being hidden behind header */
+  padding-top: 40px; /* Prevents content from being hidden behind header */
 }

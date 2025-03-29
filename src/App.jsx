@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./styles/styles.css";
 
+window.addEventListener("keydown", function (e) {
+  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+    e.preventDefault(); // Stop page scroll
+  }
+});
+
+
 const ROWS = 20;
 const COLS = 10;
 
