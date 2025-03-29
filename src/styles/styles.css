@@ -198,7 +198,7 @@ button:hover {
   }
 }
 .cell.active {
-  background-color: #4f7350; /* A slightly brighter shade */
+  background-color: #4f7350; A slightly brighter shade
   border: 1px solid #9bbc0f;
 }
 @media (max-width: 768px) {
@@ -221,4 +221,32 @@ button:hover {
     padding: 8px 16px;
     font-size: 14px;
   }
+}
+/* Header Container */
+/* Header Container - Fixed at Top */
+/* Header Container - Fixed at Top */
+.header-container {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it's above everything */
+  /* background-color: #8bac0f; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional for a subtle glow */
+  padding: 20px 0;
+}
+
+/* Gameboy Style Heading */
+.gameboy-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 28px;
+  color: #0f380f;
+  text-shadow: 3px 3px 0 #9bbc0f, -3px -3px 0 #9bbc0f, 2px 2px 5px #0f380f;
+  margin: 0;
+  text-align: center;
+}
+
+/* Add Padding to Body to Avoid Overlap */
+body {
+  padding-top: 60px; /* Prevents content from being hidden behind header */
 }
